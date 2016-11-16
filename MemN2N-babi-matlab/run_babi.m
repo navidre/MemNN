@@ -8,7 +8,7 @@
 rng('shuffle')
 addpath nn;
 addpath memory;
-base_dir = 'tasks_1-20_v1-2 2/en/'; % path to data
+base_dir = '../../../tasks_1-20_v1-2/en/'; % path to data
 t = 1; % task ID
 
 % parse data
