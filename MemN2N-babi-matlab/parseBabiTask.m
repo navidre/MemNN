@@ -12,10 +12,10 @@ sentence_ind = 0;
 max_words = 0;
 max_sentences = 0;
 
-questions = zeros(10,1000, 'single');
+questions = zeros(10, 1000, 'single');
 question_ind = 0;
 
-qstory = zeros(20,1000, 'single');
+qstory = zeros(20, 1000, 'single');
 
 fi = 1;
 fd = fopen(data_path{fi});
@@ -23,8 +23,10 @@ line_ind = 0;
 
 while true
     line = fgets(fd);
+    % If there are no more characters
     if ischar(line) == false
         fclose(fd);
+        % In case there are more files to read in the data_path
         if fi < length(data_path)
             fi = fi + 1;
             fd = fopen(data_path{fi});
@@ -34,7 +36,7 @@ while true
             break
         end
     end
-    line_ind = line_ind + 1;
+    line_ind = line_ind + 1; % starting the line_ind from 1
     words = textscan(line, '%s');
     words = words{1};
     
